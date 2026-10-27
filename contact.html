@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลติดต่อ - วิทยาลัยเทคนิคนางรอง</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: { 700: '#800000' },
+                        gold: { 500: '#f59e0b' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>body { font-family: 'Prompt', sans-serif; background-color: #f8fafc; }</style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-maroon-700 text-white shadow-lg sticky top-0 z-50 border-b-4 border-gold-500">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Vocational_Education_Commission_Thailand_Logo.svg/1200px-Vocational_Education_Commission_Thailand_Logo.svg.png" class="w-12 h-12">
+                <span class="text-xl font-bold">วิทยาลัยเทคนิคนางรอง</span>
+            </div>
+            <a href="index.html" class="inline-flex items-center px-4 py-2 bg-gold-500 hover:bg-gold-600 text-gray-900 font-semibold rounded-lg transition-colors text-sm shadow">
+                <i class="fa-solid fa-house mr-2"></i> กลับหน้าหลัก
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-5xl">
+        <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-maroon-700 mb-6 flex items-center border-b pb-4">
+                <i class="fa-solid fa-address-book text-gold-500 mr-3"></i> 3. ข้อมูลติดต่อวิทยาลัย
+            </h2>
+
+            <!-- รูปภาพเพิ่มเติม 2 รูป -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-700 mb-2">อาคารอำนวยการ / ห้องงานทะเบียน</h4>
+                    <div class="rounded-xl overflow-hidden border border-gray-200 shadow">
+                        <img src="photo/เปิดภาค2.jpg" alt="อาคารอำนวยการ" class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/600x400?text=อาคารอำนวยการ'">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-700 mb-2">จุดบริการประชาสัมพันธ์</h4>
+                    <div class="rounded-xl overflow-hidden border border-gray-200 shadow">
+                        <img src="photo/รายละเอียด.jpg" alt="งานประชาสัมพันธ์" class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/600x400?text=จุดบริการประชาสัมพันธ์'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ช่องทางติดต่อ -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <i class="fa-solid fa-location-dot text-2xl text-maroon-700 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-800">ที่อยู่</h4>
+                            <p class="text-sm text-gray-600">วิทยาลัยเทคนิคนางรอง อ.นางรอง จ.บุรีรัมย์</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <i class="fa-solid fa-phone text-2xl text-maroon-700 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-800">เบอร์โทรศัพท์</h4>
+                            <p class="text-sm text-gray-600">044-631-055 (งานประชาสัมพันธ์)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <i class="fa-solid fa-globe text-2xl text-maroon-700 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-800">เว็บไซต์ทางการ</h4>
+                            <a href="http://nrtech.ac.th" target="_blank" class="text-sm text-blue-600 hover:underline">http://nrtech.ac.th</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form ติดต่อ -->
+                <form class="space-y-4 bg-gray-50 p-6 rounded-xl border border-gray-200" onsubmit="alert('ส่งข้อความสำเร็จ'); return false;">
+                    <h3 class="font-bold text-gray-800 mb-2">ส่งข้อความถึงวิทยาลัย</h3>
+                    <input type="text" placeholder="ชื่อ-นามสกุล" required class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-maroon-700 outline-none">
+                    <input type="email" placeholder="อีเมลติดต่อ" required class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-maroon-700 outline-none">
+                    <textarea placeholder="ข้อความ / เรื่องที่ต้องการติดต่อ" rows="3" required class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-maroon-700 outline-none"></textarea>
+                    <button type="submit" class="w-full py-2.5 bg-maroon-700 hover:bg-maroon-800 text-white font-medium rounded-lg text-sm transition-colors">ส่งข้อความ</button>
+                </form>
+            </div>
+
+            <div class="text-center">
+                <a href="index.html" class="inline-flex items-center px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-xl font-medium transition-colors">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> ย้อนกลับไปหน้าหลัก
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div id="imageModal" class="fixed inset-0 bg-black/80 hidden z-50 items-center justify-center p-4" onclick="closeModal()">
+        <img id="modalImg" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('imageModal').classList.add('flex');
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.getElementById('imageModal').classList.remove('flex');
+        }
+    </script>
+</body>
+</html>

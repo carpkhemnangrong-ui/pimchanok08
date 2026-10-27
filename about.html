@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดเกี่ยวกับวิทยาลัย - วิทยาลัยเทคนิคนางรอง</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: { 700: '#800000', 800: '#6b0000' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>body { font-family: 'Prompt', sans-serif; background-color: #f8fafc; }</style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-maroon-700 text-white shadow-lg sticky top-0 z-50 border-b-4 border-gold-500">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Vocational_Education_Commission_Thailand_Logo.svg/1200px-Vocational_Education_Commission_Thailand_Logo.svg.png" class="w-12 h-12">
+                <span class="text-xl font-bold">วิทยาลัยเทคนิคนางรอง</span>
+            </div>
+            <a href="index.html" class="inline-flex items-center px-4 py-2 bg-gold-500 hover:bg-gold-600 text-gray-900 font-semibold rounded-lg transition-colors text-sm shadow">
+                <i class="fa-solid fa-house mr-2"></i> กลับหน้าหลัก
+            </a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-5xl">
+        <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-maroon-700 mb-6 flex items-center border-b pb-4">
+                <i class="fa-solid fa-graduation-cap text-gold-500 mr-3"></i> 1. รายละเอียดเกี่ยวกับวิทยาลัย
+            </h2>
+
+            <!-- รูปภาพโปสเตอร์หลัก -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3"><i class="fa-solid fa-image text-maroon-700 mr-2"></i>ประกาศรับสมัครนักศึกษา</h3>
+                <div class="rounded-xl overflow-hidden border border-gray-200 shadow-md">
+                    <!-- แก้ไข URL รูปหลักตรง src="รายละเอียด.jpg" -->
+                    <img src="รายละเอียด.jpg" alt="ประกาศรับสมัคร" class="w-full h-auto object-cover cursor-pointer hover:opacity-95 transition-opacity" onclick="openModal(this.src)">
+                </div>
+            </div>
+
+            <!-- รูปภาพเพิ่มเติม 2 รูป -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-700 mb-2">ภาพบรรยากาศสถานศึกษา 1</h4>
+                    <div class="rounded-xl overflow-hidden border border-gray-200 shadow">
+                        <!-- แท็กรูปภาพเพิ่มเติม 1 -->
+                        <img src="รายละเอียด_ภาพเพิ่มเติม1.jpg" alt="ภาพเพิ่มเติม 1" class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/600x400?text=ภาพบรรยากาศวิทยาลัย+1'">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-700 mb-2">ภาพบรรยากาศสถานศึกษา 2</h4>
+                    <div class="rounded-xl overflow-hidden border border-gray-200 shadow">
+                        <!-- แท็กรูปภาพเพิ่มเติม 2 -->
+                        <img src="รายละเอียด_ภาพเพิ่มเติม2.jpg" alt="ภาพเพิ่มเติม 2" class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/600x400?text=ภาพบรรยากาศวิทยาลัย+2'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ข้อมูลหลักสูตร -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-red-50 p-6 rounded-xl border border-red-100">
+                    <h3 class="text-lg font-bold text-maroon-700 mb-3">ระดับประกาศนียบัตรวิชาชีพ (ปวช.)</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li><strong>ประเภทวิชาอุตสาหกรรม:</strong> ช่างยนต์, ช่างกลโรงงาน, ช่างเชื่อมโลหะ, ช่างไฟฟ้า, อิเล็กทรอนิกส์, โยธา</li>
+                        <li><strong>ประเภทวิชาพาณิชยกรรม:</strong> การบัญชี, การตลาด</li>
+                        <li><strong>ประเภทวิชาอุตสาหกรรมท่องเที่ยว:</strong> การโรงแรม</li>
+                        <li><strong>เทคโนโลยีสารสนเทศ:</strong> เทคโนโลยีสารสนเทศ, เทคโนโลยีดิจิทัล</li>
+                    </ul>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+                    <h3 class="text-lg font-bold text-amber-800 mb-3">ระดับประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li><strong>ประเภทวิชาอุตสาหกรรม:</strong> เทคนิคเครื่องกล, เทคนิคยานยนต์ไฟฟ้า, เทคนิคการผลิต, เทคนิคโลหะ, ไฟฟ้า, โยธา</li>
+                        <li><strong>ประเภทวิชาบริหารธุรกิจ:</strong> การบัญชี, การตลาด</li>
+                        <li><strong>ประเภทวิชาอุตสาหกรรมท่องเที่ยว:</strong> การโรงแรม</li>
+                        <li><strong>เทคโนโลยีสารสนเทศ:</strong> เทคโนโลยีธุรกิจดิจิทัล</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="index.html" class="inline-flex items-center px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-xl font-medium transition-colors">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> ย้อนกลับไปหน้าหลัก
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black/80 hidden z-50 items-center justify-center p-4" onclick="closeModal()">
+        <img id="modalImg" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('imageModal').classList.add('flex');
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.getElementById('imageModal').classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
